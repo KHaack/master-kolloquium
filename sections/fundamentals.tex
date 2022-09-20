@@ -70,6 +70,9 @@
 		\begin{itemize}
 			\item start with random population
 			\item iterate till termination condition
+			\begin{itemize}
+				\item mutate and crossover
+			\end{itemize}
 			\item return last generation
 		\end{itemize}
 		
@@ -105,9 +108,12 @@
 		
 		\begin{itemize}
 			\item iterate till termination condition
-			\item update targets
-			\item update archive
-			\item select by rank
+			\begin{itemize}
+				\item breed offspring
+				\item update targets
+				\item update archive
+				\item select by rank
+			\end{itemize}
 			\item return archive as last generation
 		\end{itemize}	
 		

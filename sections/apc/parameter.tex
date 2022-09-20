@@ -1,25 +1,51 @@
 \begin{frame}
 	\frametitle{Parameter selection}
 	
+	\begin{itemize}
+		\item EvoSuite parameter
+		\item nearly infinite possible combinations
+		\item small-scale experiments
+		\item using small sample $S_3$
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Influence on runtime}
+	\begin{figure}
+		\includegraphics[height=0.9\textheight]{figures/generations_parameter}
+	\end{figure}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Event probability}
+	
 	\begin{columns}[c]
 		
-		\column{.45\textwidth}
-		\blockheading{Heading}
+		\column{.35\textwidth}
 		
 		\begin{itemize}
-			\item 
-			\item 
-			\item 
+			\item runtime in relation to event probability
+			\begin{itemize}
+				\item insert
+				\item mutate
+				\item crossover
+			\end{itemize}
+			\item trade-off
+			\begin{itemize}
+				\item fitness evaluation
+				\item event occurrence
+			\end{itemize}
 		\end{itemize}
 		
-		\column{.45\textwidth}
-		\blockheading{Heading}
+		\column{.60\textwidth}
+		\begin{equation}
+			P_{adj}(e) = \frac{n_1 P_1(e) + n_2 P_2(e)}{n_1 + n_2}
+		\end{equation}
 		
-		\begin{itemize}
-			\item 
-			\item 
-			\item 
-		\end{itemize}	
+		\begin{equation}
+			\hat{P}(e) = \sum_{i=k}^n \frac{n!}{i!(n-i)!} P_{adj}(e)^i (1-P_{adj}(e))^{n-i}
+		\end{equation}
 		
 	\end{columns}
 	
