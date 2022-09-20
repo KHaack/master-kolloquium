@@ -1,0 +1,74 @@
+digraph g {
+    fontname = "Verdana"
+    fontsize = 10
+    rankdir = LR
+    nodesep = "0.1"
+    ranksep = "0.2"
+    splines = False
+    peripheries = 0
+    
+    node [style="filled" fixedsize=True width=2.2 penwidth=0 fontname="Verdana" fontsize=10]
+    edge [style=invis]
+    
+    "0A" [style=invis]
+    "1A" [label="define\nfeatures" shape="oval" style="filled" fillcolor="#e6f2ff"]
+    "2A" [label="defined\nfeatures" shape="polygon" fillcolor="#e6f2ff"]
+    "3A" [label="define\ntargets" shape="oval" style="filled" fillcolor="#e6f2ff"]
+    "4A" [label="defined\ntargets" shape="polygon" fillcolor="#e6f2ff"]
+    
+    "0B" [label="prediction\nsample" shape="polygon" fillcolor="#e6f2ff"]
+    "1B" [label="train\nmodels" shape="oval" fillcolor="#e6f2ff"]
+    "2B" [label="trained\nmodels" shape="polygon" fillcolor="#e6f2ff"]
+    "3B" [label="select\nmodel" shape="oval" fillcolor="#e6f2ff"]
+    "4B" [label="selected\nmodel and POC" shape="polygon"]
+    
+    "0C" [label="sensitive\nsample" shape="polygon"]
+    "1C" [label="execute\nparameter benchmarks" shape="oval" fillcolor="#1f77b4"]
+    "2C" [label="parameter benchmark\nresult" shape="polygon"]
+    "3C" [label="select\nconfiguration" shape="oval" fillcolor="#1f77b4"]
+    "4C" [label="selected\nconfiguration" shape="polygon"]
+
+    { 
+        rank=same;
+        0 [style=invis fixedsize=True width=0 height=2 label=""]
+        1 [style=invis fixedsize=True width=0 height=2 label=""]
+        2 [style=invis fixedsize=True width=0 height=2 label=""]
+        0 -> 1 -> 2;
+    }
+    
+    subgraph clusterA {
+        labeljust="l"
+        "0A" -> "1A" -> "2A" -> "3A" -> "4A"
+        "1A":e -> "2A":w [style=solid color="#f2f2f2"]
+        "2A":e -> "3A":w [style=solid color="#f2f2f2"]
+        "3A":e -> "4A":w [style=solid color="#f2f2f2"]
+    }
+
+    subgraph clusterB {
+        labeljust="l"
+        "0B" -> "1B" -> "2B" -> "3B" -> "4B"
+        "0B":e -> "1B":w [style=solid color="#f2f2f2"]
+        "1B":e -> "2B":w [style=solid color="#f2f2f2"]
+        "2B":e -> "3B":w [style=solid color="#f2f2f2"]
+        "3B":e -> "4B":w [style=solid color="#f2f2f2"]
+    }
+
+    subgraph clusterC {
+        labeljust="l"
+        "0C" -> "1C" -> "2C" -> "3C" -> "4C"
+        "0C":e -> "1C":w [style=solid]
+        "1C":e -> "2C":w [style=solid]
+        "2C":e -> "3C":w [style=solid]
+        "3C":e -> "4C":w [style=solid]
+    }
+
+    0:e -> "0A":w
+    1:e -> "0B":w
+    2:e -> "0C":w
+
+    // edges between clusters
+    edge[constraint=false, style=solid];
+    "2A" -> "1B" [color="#f2f2f2"]
+    "4A" -> "1B" [color="#f2f2f2"]
+    "4B" -> "1C"
+}

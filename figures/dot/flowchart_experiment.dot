@@ -1,0 +1,40 @@
+digraph G {
+    fontname = "Verdana"
+    fontsize = 10
+    rankdir = LR
+    nodesep = "0.3"
+    ranksep = "0.3"
+    peripheries = 0
+    
+    node [style="filled" fixedsize=True width=2.2 penwidth=0 fontname="Verdana" fontsize=10 shape="polygon"]
+    
+
+    
+    "A0" [label="data gathering"]
+    "A1" [label="data\ncleaning/preprocessing"]
+    "A2" [label="feature extraction"]
+    "A3" [label="prediction sample"]
+    "A5" [label="evaluation sample"]
+    "A6" [label="model"]
+    "A7" [label="evaluation"]
+    
+    "A8" [label="training data"]
+    "A9" [label="test data"]
+    
+    subgraph cluster_0 {
+        "A0" -> "A1" [constraint=false]
+        "A1" -> "A2" [constraint=false]
+    }
+    
+    "A2":e -> "A3":w
+    "A2":e -> "A5":w
+    
+    "A5":e -> "A7":s
+    "A6":e -> "A7":n
+    
+    "A3":n -> "A8":w [label="80\%"]
+    "A3" -> "A9" [label="20\%"]
+    
+    "A8" -> "A6"
+    "A9" -> "A7"
+}

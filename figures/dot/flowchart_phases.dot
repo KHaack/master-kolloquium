@@ -1,0 +1,19 @@
+digraph g {
+    fontname = "Verdana"
+    fontsize = 10
+    rankdir = LR
+    nodesep = "0.3"
+    ranksep = "0.5"
+    splines = False
+    peripheries = 0
+    
+    node [style="filled" fixedsize=True width=2.2 penwidth=0 fontname="Verdana" fontsize=10 shape="polygon"]
+    
+    "0A" [label="I. Exploration Phase" ]
+    "1A" [label="II. Classification Phase"]
+    "2A" [label="III. Search Phase"]
+    
+    "0A" -> "1A" -> "2A"
+    
+    "x1" [fixedsize=True height=0.1 label="" style=invis]
+}

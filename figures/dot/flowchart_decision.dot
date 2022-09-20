@@ -1,0 +1,40 @@
+digraph g {
+    fontname = "Verdana"
+    fontsize = 10
+    rankdir = LR
+    nodesep = "0.3"
+    ranksep = "0.5"
+    peripheries = 0
+    
+    node [style="filled" fixedsize=True width=2.2 penwidth=0 fontname="Verdana" fontsize=10 shape="polygon"]
+    
+    "0A" [label="using default configuration" ]
+    "1A" [label="change configuration?" shape="diamond"]
+    "2A" [label="using adjusted configuration"]
+    "3A" [label="using default configuration"]
+    
+    subgraph cluster_0 {
+		node [style=filled,color=white]
+		"0A"
+	}
+	
+	subgraph cluster_1 {
+		node [style=filled,color=white]
+		"1A"
+	}
+	
+	subgraph cluster_2 {
+		node [style=filled,color=white]
+		"2A"
+		"3A"
+	}
+    
+    "0A" -> "1A"
+    "1A":s -> "2A":w
+    "1A":n -> "3A":w
+    
+    "label1" [label="I. Exploration Phase" style=empty]
+    "label2" [label="II. Classification Phase" style=empty]
+    "label3" [label="III. Search Phase" style=empty]
+    "label1" -> "label2" -> "label3" [style=invis]
+}

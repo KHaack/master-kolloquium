@@ -1,0 +1,12 @@
+digraph G {
+    fontname = "Verdana"
+    fontsize = 10
+    
+    node [style="filled" fixedsize=True width=2.2 penwidth=0 fontname="Verdana" fontsize=10]
+    
+    "Parameter setting" -> "Parameter tuning" [xlabel="before the run"]
+    "Parameter setting" -> "Parameter control" [label="during the run"]
+    "Parameter control" -> "Deterministic"
+    "Parameter control" -> "Adaptive"
+    "Parameter control" -> "Self-Adaptive"
+}

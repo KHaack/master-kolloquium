@@ -1,0 +1,19 @@
+digraph G {
+    fontname = "Verdana"
+    fontsize = 10
+    rankdir = LR
+    nodesep = "0.3"
+    ranksep = "0.5"
+    peripheries = 0
+    
+    node [style="filled" fixedsize=True width=2.2 penwidth=0 fontname="Verdana" fontsize=10 shape="polygon"]
+    
+    "ga" [label="Genetic Algorithm"]
+    "ws" [label="Whole Suite"]
+    "mosa" [label="MOSA"]
+    "dyna" [label="DynaMOSA"]
+    
+    "ga":e -> "ws":w
+    "ga":e -> "mosa":w
+    "mosa":e -> "dyna":w
+}
