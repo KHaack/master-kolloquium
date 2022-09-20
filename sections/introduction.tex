@@ -5,11 +5,11 @@
 		
 		\column{\textwidth}
 		\begin{itemize}
-			\item Unit tests
+			\item software tests are essential
 			\item maximize coverage (line, branch, exception)
 			\item lack of sufficient tests
 			\item costly and time-consuming
-			\item => use search-based software testing
+			\item using search-based software testing
 		\end{itemize}
 		
 	\end{columns}
@@ -23,14 +23,17 @@
 		
 		\column{\textwidth}
 		\begin{itemize}
-			\item Tools... => EvoSuite state-of-the-art
-			\item may not terminate => search budget
+			\item many tools solve this problem
+			\item EvoSuite one of the bests in competitions \cite{Panichella.2020}
+			\begin{itemize}
+				\item state-of-the-art: DynaMOSA  
+				\item fairly good, but not perfect \cite{Arcuri.2014}
+			\end{itemize}
 			\item optimal only with optimal configuration
-			\item No Free Lunch theorem 
+			\item No Free Lunch theorem \cite{Wolpert.1997}
 				\begin{itemize}
-					\item impossible to find optimal configuration for all problems
+					\item impossible to find optimal configuration
 				\end{itemize}
-			\item EvoSuite's default configuration is fairly good, but not perfect
 		\end{itemize}
 		
 	\end{columns}
@@ -45,8 +48,7 @@
 		\column{\textwidth}
 		\begin{itemize}
 			\item wide variety of problem-cases
-			\item concept landscape depending 
-			\item adaptive parameter control
+			\item concept landscape depending adaptive parameter control
 			\item increase coverage of EvoSuite
 		\end{itemize}
 		
@@ -61,21 +63,10 @@
 		
 		\column{\textwidth}
 		\begin{itemize}
-			\item 
-		\end{itemize}
-		
-	\end{columns}
-	
-\end{frame}
-
-\begin{frame}
-	\frametitle{Challenges}
-	
-	\begin{columns}[c]
-		
-		\column{\textwidth}
-		\begin{itemize}
-			\item 
+			\item DynaMOSA sensitive for adaptive parameter control \cite{Wetzler.2020}
+			\item parameter control can have a negative impact \cite{Paterson.2015}
+			\item random can out-perform genetic \cite{Shamshiri.2015}
+			\item landscape characteristics \cite{Albunian.2020}
 		\end{itemize}
 		
 	\end{columns}
@@ -85,14 +76,12 @@
 \begin{frame}
 	\frametitle{Delimitation}
 	
-	\begin{columns}[c]
-		
-		\column{\textwidth}
-		\begin{itemize}
-			\item 
-		\end{itemize}
-		
-	\end{columns}
+	\begin{itemize}
+		\item focus on DynaMOSA
+		\item pre-implemented parameter
+		\item limit the experiment size
+		\item use landscape features from the literature
+	\end{itemize}
 	
 \end{frame}
 

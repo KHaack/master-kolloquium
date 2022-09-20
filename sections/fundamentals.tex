@@ -3,10 +3,10 @@
 	
 	\begin{itemize}
 		\item tests for object oriented languages
-		\item sequence of method calls
-		\item
-		\item
-		\item
+		\item sequence of method calls as search space
+		\item maximizing coverage
+		\item optimization problem
+		\item using genetic algorithms
 	\end{itemize}
 			
 	
@@ -20,12 +20,13 @@
 		\column{.45\textwidth}
 
 		\begin{itemize}
-			\item 
-			\item function for e.g. coverage
+			\item function for e.g. branch distance
 			\item guidance for search algorithms
-			\item
-			\item
 		\end{itemize}
+		
+		\begin{figure}
+			\includegraphics[width=1\textwidth]{figures/plot_guidance}
+		\end{figure}
 		
 		\column{.45\textwidth}
 		\lstinputlisting{code/simple_guidance.java}
@@ -42,11 +43,10 @@
 		\column{.45\textwidth}
 
 		\begin{itemize}
-			\item 
-			\item 
-			\item
-			\item
-			\item
+			\item metaphor for the search space
+			\item fitness value as height
+			\item input as depth and width
+			\item search for minima
 		\end{itemize}
 		
 		\column{.45\textwidth}
@@ -61,31 +61,16 @@
 
 \begin{frame}
 	\frametitle{Genetic algorithm}
-	
-	\begin{columns}[c]
 		
-		\column{.45\textwidth}
-		\blockheading{Heading}
-		
+	\begin{itemize}
+		\item start with random population
+		\item iterate till termination condition
 		\begin{itemize}
-			\item start with random population
-			\item iterate till termination condition
-			\begin{itemize}
-				\item mutate and crossover
-			\end{itemize}
-			\item return last generation
+			\item mutate and crossover
 		\end{itemize}
+		\item return last generation
+	\end{itemize}
 		
-		\column{.45\textwidth}
-		\blockheading{Heading}
-		
-		\begin{itemize}
-			\item 
-			\item 
-			\item 
-		\end{itemize}	
-		
-	\end{columns}
 	
 \end{frame}
 
@@ -95,7 +80,6 @@
 	\begin{columns}[c]
 		
 		\column{.45\textwidth}
-		\blockheading{Heading}
 		
 		\begin{itemize}
 			\item start with random population
@@ -104,7 +88,6 @@
 		\end{itemize}
 		
 		\column{.45\textwidth}
-		\blockheading{Heading}
 		
 		\begin{itemize}
 			\item iterate till termination condition
@@ -124,23 +107,9 @@
 \begin{frame}
 	\frametitle{Parameter tuning and control}
 	
-	\begin{columns}[c]
-		
-		\column{.45\textwidth}
-
-		\begin{itemize}
-			\item 
-			\item 
-			\item 
-			\item
-			\item
-		\end{itemize}
-		
-		\column{.45\textwidth}
-		\begin{figure}
-			\includegraphics[width=1\textwidth]{figures/flowchart_parameter_control}
-		\end{figure}
-
-	\end{columns}
+	\begin{figure}
+		\includegraphics[width=0.9\textwidth]{figures/flowchart_parameter_control}
+	\end{figure}
+	\cite{Eiben.1999}
 	
 \end{frame}
