@@ -1,18 +1,4 @@
 \begin{frame}
-	\frametitle{Search-based software testing}
-	
-	\begin{itemize}
-		\item tests for object oriented languages
-		\item sequence of method calls as search space
-		\item maximizing coverage
-		\item optimization problem
-		\item using genetic algorithms
-	\end{itemize}
-			
-	
-\end{frame}
-
-\begin{frame}
 	\frametitle{Fitness function}
 	
 	\begin{columns}[c]
@@ -53,8 +39,53 @@
 		\begin{figure}
 			\includegraphics[width=1\textwidth]{figures/complex_landscape}
 		\end{figure}
+		\cite{Harman.2007}
 		
+	\end{columns}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Random Walk}
+	
+	\begin{columns}[c]
 		
+		\column{.45\textwidth}
+
+		\begin{itemize}
+			\item \cite{Kauffman.1987}
+			\item used to describe landscape
+			\item walk over landscape
+			\item random unbiased steps
+		\end{itemize}
+		
+		\column{.45\textwidth}
+		\begin{figure}
+			\includegraphics[width=1\textwidth]{figures/random_walk}
+		\end{figure}
+
+	\end{columns}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Long Jump}
+	
+	\begin{columns}[c]
+		
+		\column{.45\textwidth}
+
+		\begin{itemize}
+			\item \cite{Kauffman.1987}
+			\item multiple steps
+			\item landscape approximation
+		\end{itemize}
+		
+		\column{.45\textwidth}
+		\begin{figure}
+			\includegraphics[width=1\textwidth]{figures/long_jump}
+		\end{figure}
+
 	\end{columns}
 	
 \end{frame}
@@ -63,6 +94,8 @@
 	\frametitle{Genetic algorithm}
 		
 	\begin{itemize}
+		\item test = individual
+		\item multiple tests = population
 		\item start with random population
 		\item iterate till termination condition
 		\begin{itemize}
@@ -82,21 +115,18 @@
 		\column{.45\textwidth}
 		
 		\begin{itemize}
-			\item start with random population
+			\item genetic algorithm
 			\item multiple target
 			\item keep track of target covering individuals
+			\item keep track of covering individuals (archive)
 		\end{itemize}
 		
 		\column{.45\textwidth}
 		
 		\begin{itemize}
-			\item iterate till termination condition
-			\begin{itemize}
-				\item breed offspring
-				\item update targets
-				\item update archive
-				\item select by rank
-			\end{itemize}
+			\item dynamic target update
+			\item archive update
+			\item select by rank
 			\item return archive as last generation
 		\end{itemize}	
 		

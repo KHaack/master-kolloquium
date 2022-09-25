@@ -25,40 +25,41 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Prediction sample}
+	\frametitle{Sample}
 	
+	\begin{columns}[c]
+	
+	\column{.32\textwidth}
+	\blockheading{$S_1$}
 	\begin{itemize}
-		\item $S_1$
-		\item 709 Java Classes
+		\item for training prediction
+		\item Corpus: SF110
 		\item randomly selected
-		\item SF110
-		\item 9.8 days on three machines
+		\item 709 Java Classes
+		\item 9.8 days
 	\end{itemize}
 	
-\end{frame}
-
-\begin{frame}
-	\frametitle{Evaluation sample}
-	
+	\column{.32\textwidth}
+	\blockheading{$S_2$}
 	\begin{itemize}
-		\item $S_2$
+		\item for evaluation
+		\item Corpus: Panichella
+		\item all classes
 		\item 346 Java Classes
-		\item the whole Panichella corpus
-		\item 4.8 days on tree machines
+		\item 4.8 days
 	\end{itemize}
 	
-\end{frame}
-
-\begin{frame}
-	\frametitle{Sensitive sample}
-	
+	\column{.32\textwidth}
+	\blockheading{$S_3$}
 	\begin{itemize}
-		\item $S_3$
+		\item for parameter search
+		\item Corpus: SF110
+		\item high stdev
 		\item 20 Java Classes
-		\item extracted from $S_1$
-		\item high Standard Deviation
-		\item 6.6 hours on tree machines
+		\item 6.6 hours
 	\end{itemize}
+	
+	\end{columns}
 	
 \end{frame}
 
@@ -66,6 +67,8 @@
 	\frametitle{Comparisons}
 	
 	\begin{itemize}
+		\item multiple experiments
+		\item executed on 3 identical machines
 		\item 30 repeats for every Java Class
 		\item Mann-Whitney U-test
 		\item Vargha-Delaney effect size $\hat{A}_{12}$
