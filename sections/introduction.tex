@@ -6,7 +6,7 @@
 		\column{\textwidth}
 		\begin{itemize}
 			\item software tests are essential
-			\item maximize coverage (line, branch, exception)
+			\item target: maximize coverage (line, branch, exception)
 			\item lack of sufficient tests
 			\item costly and time-consuming
 			\item using search-based software testing
@@ -20,10 +20,10 @@
 	\frametitle{Search-based software testing}
 	
 	\begin{itemize}
-		\item tests for object oriented languages
+		\item automatically generating unit tests
 		\item sequence of method calls as search space
 		\item maximizing coverage
-		\item optimization problem
+		\item treat as: optimization problem
 		\item using genetic algorithms
 	\end{itemize}
 			
@@ -40,10 +40,10 @@
 			\item many tools solve this problem
 			\item EvoSuite one of the bests in competitions \cite{Panichella.2020}
 			\begin{itemize}
-				\item state-of-the-art: DynaMOSA  
+				\item algorithm: DynaMOSA  
 				\item fairly good, but not perfect \cite{Arcuri.2014}
 			\end{itemize}
-			\item optimal only with optimal configuration
+			\item optimal only with optimal parameters (configuration)
 			\item No Free Lunch theorem \cite{Wolpert.1997}
 				\begin{itemize}
 					\item impossible to find optimal configuration
@@ -61,7 +61,11 @@
 		
 		\column{\textwidth}
 		\begin{itemize}
-			\item wide variety of problem-cases
+			\item EvoSuite
+			\begin{itemize}
+				\item good at: wide variety of problem-cases
+				\item bad at: some problem-cases
+		\end{itemize}
 			\item concept landscape depending adaptive parameter control
 			\item increase coverage of EvoSuite
 		\end{itemize}
@@ -77,10 +81,14 @@
 		
 		\column{\textwidth}
 		\begin{itemize}
-			\item DynaMOSA sensitive for adaptive parameter control \cite{Wetzler.2020}
-			\item parameter control can have a negative impact \cite{Paterson.2015}
-			\item random can out-perform genetic \cite{Shamshiri.2015}
-			\item landscape characteristics \cite{Albunian.2020}
+			\item \cite{Wetzler.2020}: DynaMOSA sensitive for adaptive parameter control
+			\item \cite{Paterson.2015}: parameter control can have a negative impact
+			\item \cite{Shamshiri.2015}: random can out-perform a genetic algorithm
+			\item \cite{Albunian.2020}: landscape characteristics 
+			\begin{itemize}
+				\item Information Content (IC)
+				\item Neutrality Volume (NV)
+			\end{itemize}
 		\end{itemize}
 		
 	\end{columns}
@@ -92,7 +100,7 @@
 	
 	\begin{itemize}
 		\item focus on DynaMOSA
-		\item pre-implemented parameter
+		\item only implemented parameter
 		\item limit the experiment size
 		\item use landscape features from the literature
 	\end{itemize}
