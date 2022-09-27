@@ -47,13 +47,13 @@
 
 \begin{frame}
 	\frametitle{Random Walk}
+	\framesubtitle{\cite{Kauffman.1987}}
 	
 	\begin{columns}[c]
 		
 		\column{.45\textwidth}
 
 		\begin{itemize}
-			\item \cite{Kauffman.1987}
 			\item used to describe landscape
 			\item walk over landscape
 			\item random unbiased steps
@@ -70,14 +70,16 @@
 
 \begin{frame}
 	\frametitle{Long Jump}
+	\framesubtitle{\cite{Kauffman.1987}}
 	
 	\begin{columns}[c]
 		
 		\column{.45\textwidth}
 
 		\begin{itemize}
-			\item \cite{Kauffman.1987}
 			\item multiple steps
+			\item not precise 
+			\item skip features (like minima)
 			\item landscape approximation
 		\end{itemize}
 		
@@ -94,7 +96,7 @@
 	\frametitle{Genetic algorithm}
 		
 	\begin{itemize}
-		\item test = individual
+		\item unit test = individual
 		\item multiple tests = population
 		\item start with random population
 		\item iterate till termination condition
@@ -109,37 +111,14 @@
 
 \begin{frame}
 	\frametitle{DynaMOSA}
+	\framesubtitle{\cite{Panichella.2017}}
 	
-	\begin{columns}[c]
-		
-		\column{.45\textwidth}
-		
-		\begin{itemize}
-			\item \cite{Panichella.2017}
-			\item genetic algorithm
-			\item multiple target
-			\item archive: keep track of target covering individuals
+	\begin{itemize}
+		\item genetic algorithm
+		\item multiple target
+		\item dynamic target update
+		\item archive: keep track of target covering
+		\item return archive as last generation individuals
 		\end{itemize}
-		
-		\column{.45\textwidth}
-		
-		\begin{itemize}
-			\item dynamic target update
-			\item archive update
-			\item select by rank
-			\item return archive as last generation
-		\end{itemize}	
-		
-	\end{columns}
-	
-\end{frame}
-
-\begin{frame}
-	\frametitle{Parameter tuning and control}
-	
-	\begin{figure}
-		\includegraphics[width=0.9\textwidth]{figures/flowchart_parameter_control}
-	\end{figure}
-	\cite{Eiben.1999}
 	
 \end{frame}

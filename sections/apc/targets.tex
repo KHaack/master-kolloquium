@@ -1,29 +1,38 @@
 \begin{frame}
-	\frametitle{Targets}
+	\frametitle{Classification targets}
 	
 	\begin{itemize}
-		\item Coverage improvement by parameter
+		\item predict: coverage improvement by parameter
+		\item problems
 		\begin{itemize}
-			\item example: $pop = 125$
-			\item time-consuming experiments necessary
-		\end{itemize} 
+			\item nearly infinite possible combinations
+			\item time-consuming experiments
+			\item example experiment shows: low TPR
+		\end{itemize}
 		\item instead: use data of one experiment
 		\item targets approximations
-		\begin{itemize}
-			\item Low end coverage
-			\item High standard deviation 
-			\item Relative low coverage  
-		\end{itemize} 
 	\end{itemize}
 	
 \end{frame}
 
 \begin{frame}
-	\frametitle{Targets}
+	\frametitle{Targets approximations}
 	
-	\begin{table}
-		\centering
-		\resizebox{\textwidth}{!}{\input{tables/targets}}
-	\end{table}
+	\begin{itemize}
+		\item predict: low end coverage
+		\begin{itemize}
+			\item search will not reach 100\% or 80\% coverage
+		\end{itemize}
+
+		\item predict: relative low coverage
+		\begin{itemize}
+			\item search will not reach 100\% or 80\% of the highest coverage for this Java Class
+		\end{itemize}		
+		
+		\item predict: high standard deviation
+		\begin{itemize}
+			\item coverage of the Java Class has high stdev
+		\end{itemize}
+	\end{itemize}
 	
 \end{frame}

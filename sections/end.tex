@@ -1,0 +1,171 @@
+\begin{frame}
+	\frametitle{Parameter tuning and control}
+	
+	\begin{figure}
+		\includegraphics[width=0.9\textwidth]{figures/flowchart_parameter_control}
+	\end{figure}
+	\cite{Eiben.1999}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Length of Exploration Phase}
+	
+	\begin{columns}[c]
+		
+		\column{.45\textwidth}
+
+		\begin{itemize}
+			\item compare landscape features ever 10\%
+			\item using Euclidean distance
+			\item trade-off between
+				\begin{itemize}
+					\item time for exploration
+					\item time for adjusted configuration
+				\end{itemize}
+			\item between 20 and 40\% from search (percentage of classification)
+		\end{itemize}
+		
+		\column{.45\textwidth}
+		\begin{figure}
+			\includegraphics[width=1\textwidth]{figures/euclidean_distances}
+		\end{figure}
+		
+		
+	\end{columns}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Machine learning algorithm}
+	
+	\begin{itemize}
+		\item binary classification
+		\item supervised learning
+		\item fast classification
+		\item few features
+		\item decision tree
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Hyper-parameter search}
+	
+	\begin{itemize}
+		\item only apply on as many as possible
+			\begin{itemize}
+				\item TPR > 80\%
+			\end{itemize}
+		\item only apply if positive effect
+			\begin{itemize}
+				\item FPR < 5\%
+			\end{itemize}
+		\item percentage of classification (POC)
+		\item construction criteria (Gini Impurity, Entropy or Log-Loss)
+		\item depth of decision tree
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Influence on runtime}
+	\begin{figure}
+		\includegraphics[height=0.9\textheight]{figures/generations_parameter}
+	\end{figure}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Event probability}
+	
+	\begin{columns}[c]
+		
+		\column{.35\textwidth}
+		
+		\begin{itemize}
+			\item runtime in relation to event probability
+			\begin{itemize}
+				\item insert
+				\item mutate
+				\item crossover
+			\end{itemize}
+			\item trade-off
+			\begin{itemize}
+				\item fitness evaluation
+				\item event occurrence
+			\end{itemize}
+		\end{itemize}
+		
+		\column{.60\textwidth}
+		\begin{equation}
+			P_{adj}(e) = \frac{n_1 P_1(e) + n_2 P_2(e)}{n_1 + n_2}
+		\end{equation}
+		
+		\begin{equation}
+			\hat{P}(e) = \sum_{i=k}^n \frac{n!}{i!(n-i)!} P_{adj}(e)^i (1-P_{adj}(e))^{n-i}
+		\end{equation}
+		
+	\end{columns}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Parameter experiments}
+	
+	\begin{table}
+		\centering
+		\resizebox{\textwidth}{!}{\input{tables/parameter}}
+	\end{table}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Adaptive parameter control}
+	
+	\begin{columns}[c]
+		
+		\column{\textwidth}
+		\blockheading{Known sample $S_1$}
+			
+		\begin{table}
+			\centering
+			\resizebox{\textwidth}{!}{\input{tables/cut_apc_eval_known}}
+		\end{table}
+		
+	\end{columns}
+	
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+	\frametitle{Adaptive parameter control}
+	
+	\begin{columns}[c]
+		
+		\column{\textwidth}
+		\blockheading{Unknown sample $S_2$}
+		
+		\begin{table}
+			\centering
+			\resizebox{\textwidth}{!}{\input{tables/cut_apc_eval_unknown}}
+		\end{table}
+		
+	\end{columns}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Selected configuration}
+
+	\begin{columns}[c]
+		
+		\column{\textwidth}
+		\blockheading{Unknown sample $S_2$}
+		
+		\begin{table}
+			\centering
+			\resizebox{\textwidth}{!}{\input{tables/cut_parameter_eval_unknown}}
+		\end{table}
+		
+	\end{columns}
+	
+\end{frame}

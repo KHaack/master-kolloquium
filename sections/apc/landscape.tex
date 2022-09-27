@@ -1,10 +1,11 @@
 \begin{frame}
 	\frametitle{Landscape approximation}
+	\framesubtitle{\cite{Kauffman.1987}}
 	
 	\begin{itemize}
 		\item random walk is time-consuming
 		\item instead: using the first generations
-		\item ''long jump'' instead a step \cite{Kauffman.1987}
+		\item ''long jump'' instead a step 
 		\item approximation of the landscape
 	\end{itemize}
 	
@@ -14,12 +15,12 @@
 	\frametitle{Fitness}
 	
 	\begin{itemize}
+		\item implemented in EvoSuite
 		\item ratio between:
 		\begin{itemize}
 			\item current fitness value
 			\item maximum observed value
 		\end{itemize}
-		\item range of $[0,1]$
 		\item high ratio: good performing
 		\item low ratio: bad performing
 	\end{itemize}
@@ -28,63 +29,41 @@
 
 \begin{frame}
 	\frametitle{Gradient branches}
+	\framesubtitle{\cite{Shamshiri.2015}}
 	
 	\begin{itemize}
-		\item \cite{Shamshiri.2015}
+		\item implemented in EvoSuite
 		\item Byte-code analysis
-		\item branch distance to be covered
-		\item some branches without distance
-		\item ratio between:
 		\begin{itemize}
 			\item branches with gradient
 			\item branches without gradient
 		\end{itemize}
-		\item range of $[0,1]$
+		\item ratio between both
 		\item high ratio: guidance
 		\item low ratio: no guidance
 	\end{itemize}
 	
 \end{frame}
 
-\begin{frame}
-	\frametitle{Neutrality Volume}
-	
-	\begin{itemize}
-		\item \cite{Albunian.2020}
-		\item neutral: no guidance
-		\item based on fitness sequence $S$
-		\item NV
-		\begin{itemize}
-			\item fitness changes in $S$
-			\item depending on steps
-		\end{itemize}
-		\item $NV_{Ratio}$:
-		\begin{itemize}
-			\item range of $[0,1]$
-		\end{itemize}
-	\end{itemize}	
-
-	
-\end{frame}
 
 \begin{frame}
-	\frametitle{Example: Neutrality Volume}
+	\frametitle{Neutrality Volume (NV)}
+	\framesubtitle{\cite{Albunian.2020}}
 	
 	\begin{columns}[c]
 		
 		\column{.45\textwidth}
 		
-		\begin{equation}
-			S = \{1, 1, 0, 1, 1, 1, 1, 1\}
-		\end{equation}
-	
-		\begin{equation}
-			NV = 3
-		\end{equation}
-	
-		\begin{equation}
-			NV_{Ratio} = \frac{NV}{\# of steps} = \frac{3}{8} = 0.375
-		\end{equation}
+		\begin{itemize}
+			\item neutrality of the landscape
+			\item neutral: no guidance
+			\item based on fitness values
+			\item number of fitness changes
+			\item depending on steps
+			\begin{itemize}
+				\item $NV_{Ratio}$
+			\end{itemize}
+		\end{itemize}	
 	
 		\column{.45\textwidth}
 		\begin{figure}
@@ -96,11 +75,14 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Information Content}
+	\frametitle{Information Content (IC)}
+	\framesubtitle{\cite{Vassilev.2000,Albunian.2020}}
 	
 	\begin{itemize}
-		\item \cite{Vassilev.2000}
-		\item how many information is needed to construct $S$
+		\item information content of the landscape
+		\item ruggedness of the landscape
+		\item high IC: rugged landscape
+		\item low IC: soft landscape
 	\end{itemize}
 	
 \end{frame}

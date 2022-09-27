@@ -1,28 +1,55 @@
 \begin{frame}
 	\frametitle{Classification}
+	\framesubtitle{Known sample $S_1$}
 	
 	\begin{columns}[c]
 		
 		\column{.45\textwidth}
-		\blockheading{Known sample $S_1$}
 		
 		\begin{itemize}
 			\item trained on $S_1$
 			\item test on $S_1$
 			\item TPR of 86\%
 			\item FPR of 8\%
-			\item acceptable reliability
 		\end{itemize}
 		
 		\column{.45\textwidth}
-		\blockheading{Unknown sample $S_2$}
+		
+		\begin{itemize}
+			\item[$\blacksquare$] RQ1 landscape feature $\checkmark$
+			\item[\textcolor{hni-gray}{$\blacksquare$}] \textcolor{hni-gray}{RQ2 classification target}
+			\item[$\blacksquare$] RQ3 classification model $\checkmark$
+			\item[$\blacksquare$] RQ4 POC $\checkmark$
+			\item[\textcolor{hni-gray}{$\blacksquare$}] \textcolor{hni-gray}{RQ5 configuration}
+		\end{itemize}	
+		
+	\end{columns}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Classification}
+	\framesubtitle{Unknown sample $S_2$}
+	
+	\begin{columns}[c]
+		
+		\column{.45\textwidth}
 		
 		\begin{itemize}
 			\item trained on $S_1$
 			\item test on $S_2$
 			\item TPR of 21\%
 			\item FPR of 7\%
-			\item not reliability
+		\end{itemize}
+		
+		\column{.45\textwidth}
+		
+		\begin{itemize}
+			\item[$\blacksquare$] RQ1 landscape feature \xmark
+			\item[\textcolor{hni-gray}{$\blacksquare$}] \textcolor{hni-gray}{RQ2 classification target}
+			\item[$\blacksquare$] RQ3 classification model \xmark
+			\item[$\blacksquare$] RQ4 POC \xmark
+			\item[\textcolor{hni-gray}{$\blacksquare$}] \textcolor{hni-gray}{RQ5 configuration}
 		\end{itemize}	
 		
 	\end{columns}
@@ -31,51 +58,96 @@
 
 \begin{frame}
 	\frametitle{Adaptive parameter control}
+	\framesubtitle{Known sample $S_1$}
 	
 	\begin{columns}[c]
-		
-		\column{\textwidth}
-		\blockheading{Known sample $S_1$}
-			
-		\begin{table}
-			\centering
-			\resizebox{\textwidth}{!}{\input{tables/cut_apc_eval_known}}
-		\end{table}
-		
-	\end{columns}
 	
-\end{frame}
-
-\begin{frame}[allowframebreaks]
-	\frametitle{Adaptive parameter control}
+		\column{.50\textwidth}
+		\begin{itemize}
+			\item 709 Java Classes
+			\item 50 Java Classes ''adjusted''
+			\item 10 significant change
+			\begin{itemize}
+				\item 6 positive change (up to 10.8\%)
+				\item 4 negative change (up to 50.5\%)
+			\end{itemize}
+			\item mixed result
+		\end{itemize}
+		
+		\column{.45\textwidth}
+		\begin{itemize}
+			\item[\textcolor{hni-gray}{$\blacksquare$}] \textcolor{hni-gray}{RQ1 landscape feature \checkmark}
+			\item[$\blacksquare$] RQ2 classification target \xmark
+			\item[\textcolor{hni-gray}{$\blacksquare$}] \textcolor{hni-gray}{RQ3 classification model \checkmark}
+			\item[\textcolor{hni-gray}{$\blacksquare$}] \textcolor{hni-gray}{RQ4 POC \checkmark}
+			\item[$\blacksquare$] RQ5 configuration \xmark
+		\end{itemize}	
 	
-	\begin{columns}[c]
-		
-		\column{\textwidth}
-		\blockheading{Unknown sample $S_2$}
-		
-		\begin{table}
-			\centering
-			\resizebox{\textwidth}{!}{\input{tables/cut_apc_eval_unknown}}
-		\end{table}
-		
 	\end{columns}
 	
 \end{frame}
 
 \begin{frame}
-	\frametitle{Selected configuration}
+	\frametitle{Adaptive parameter control}
+	\framesubtitle{Unknown sample $S_2$}
+	
+	\begin{columns}[c]
+	
+	\column{.50\textwidth}
+	\begin{itemize}
+		\item 346 Java Classes
+		\item 22 Java Classes ''adjusted''
+		\item 1 significant change
+		\begin{itemize}
+			\item 1 positive change (with 3.4\%)
+			\item 0 negative change
+		\end{itemize}
+		\item positive result
+	\end{itemize}
+	
+	\column{.45\textwidth}
+		\begin{itemize}
+			\item[\textcolor{hni-gray}{$\blacksquare$}] \textcolor{hni-gray}{RQ1 landscape feature \xmark}
+			\item[$\blacksquare$] RQ2 classification target \checkmark
+			\item[\textcolor{hni-gray}{$\blacksquare$}] \textcolor{hni-gray}{RQ3 classification model \xmark}
+			\item[\textcolor{hni-gray}{$\blacksquare$}] \textcolor{hni-gray}{RQ4 POC \xmark}
+			\item[$\blacksquare$] RQ5 configuration \checkmark
+		\end{itemize}
+	
+	\end{columns}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Configuration separately}
+	\framesubtitle{Unknown sample $S_2$}
 
 	\begin{columns}[c]
-		
-		\column{\textwidth}
-		\blockheading{Unknown sample $S_2$}
-		
-		\begin{table}
-			\centering
-			\resizebox{\textwidth}{!}{\input{tables/cut_parameter_eval_unknown}}
-		\end{table}
-		
+	
+	\column{.50\textwidth}
+	\begin{itemize}
+		\item without the concept
+		\item 346 Java Classes
+		\item 95 significant change
+		\begin{itemize}
+			\item 58 positive change
+			\item 37 negative change
+		\end{itemize}
+		\item mixed result
+		\begin{itemize}
+			\item concept avoid the negative impact
+		\end{itemize}
+	\end{itemize}
+	
+	\column{.45\textwidth}
+		\begin{itemize}
+			\item[\textcolor{hni-gray}{$\blacksquare$}] \textcolor{hni-gray}{RQ1 landscape feature}
+			\item[\textcolor{hni-gray}{$\blacksquare$}] \textcolor{hni-gray}{RQ2 classification target}
+			\item[$\blacksquare$] RQ3 classification model \checkmark
+			\item[\textcolor{hni-gray}{$\blacksquare$}] \textcolor{hni-gray}{RQ4 POC}
+			\item[$\blacksquare$] RQ5 configuration \xmark
+		\end{itemize}
+	
 	\end{columns}
 	
 \end{frame}
